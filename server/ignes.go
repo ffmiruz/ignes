@@ -29,7 +29,6 @@ func main() {
 			"texts": rankedSentences,
 		})
 	})
-
 	http.ListenAndServe(":8080", nil)
 
 }
@@ -115,4 +114,4 @@ func hello(w http.ResponseWriter, r *http.Request) {
 // Todo:
 //   use better mux
 //   use env
-//
+//   https://lite.cnn.io/en/article/h_e1d8595d35ad7231acd2d3a0c7932ad2 will fail decimal
