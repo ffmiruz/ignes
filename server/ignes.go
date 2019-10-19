@@ -33,6 +33,10 @@ func main() {
 
 }
 
+// number of characters in p element to consider a content.
+// remove stuffs like ads and attribution in p.
+const paraLimit = 175
+
 // Scrape by "p" element
 func pScrape(url string) ([]string, error) {
 	sel := "p"
@@ -49,7 +53,7 @@ func pScrape(url string) ([]string, error) {
 		lastDot := strings.LastIndex(paragraph, ".")
 		// Remove insufficient length paragraph and cut string after last fullstop
 		// todo: fix getting tripped by decimal
-		if lastDot >= 175 {
+		if lastDot >= paraLimit {
 			item = string(paragraph[0 : lastDot+1])
 			items = append(items, item)
 
